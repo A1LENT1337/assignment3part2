@@ -1,33 +1,32 @@
 // database/db.js
 const { MongoClient } = require("mongodb");
 
-const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI;
-const DB_NAME = process.env.DB_NAME || "habit_tracker";
-
 let client;
-let db;
-let habitsCollection;
+let habits;
 
 async function connectDB() {
-  if (db) return db; 
+  if (habits) return habits;
 
-  client = new MongoClient(MONGODB_URI);
+  const uri = process.env.MONGO_URI || process.env.MONGODB_URI;
+  if (!uri) throw new Error("MONGO_URI is missing in environment variables");
+
+  const dbName = process.env.DB_NAME || "habit_tracker";
+
+  client = new MongoClient(uri);
   await client.connect();
 
-  db = client.db(DB_NAME);
-  habitsCollection = db.collection("habits");
+  const db = client.db(dbName);
+  habits = db.collection("habits");
 
-  console.log("Connected to MongoDB:", DB_NAME);
-  console.log("Collection:", habitsCollection.collectionName);
+  console.log("Connected to MongoDB:", dbName);
+  console.log("Collection: habits");
 
-  return db;
+  return habits;
 }
 
 function getHabitsCollection() {
-  if (!habitsCollection) {
-    throw new Error("Database not initialized. Call connectDB first.");
-  }
-  return habitsCollection;
+  if (!habits) throw new Error("DB not initialized. Call connectDB() first.");
+  return habits;
 }
 
 module.exports = { connectDB, getHabitsCollection };
