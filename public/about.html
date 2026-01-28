@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — HabitTracker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="dot"></span><span>HabitTracker</span></div>
+  <nav class="nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/dashboard.html">Dashboard</a>
+    <a class="nav-link" href="/search.html">Search</a>
+    <a class="nav-link active" href="/about.html">About</a>
+    <a class="nav-link" href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>About the project</h1>
+    <p class="muted">
+      HabitTracker is an academic fullstack project with a clean UI and a strict REST API.
+      Backend uses MongoDB Native Driver only.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Team</h2>
+    <div class="cards">
+      <div class="result-card">
+        <h3>Nurdaulet</h3>
+        <p class="muted">Frontend</p>
+        <p class="muted small">Pages, grid UX, UI consistency</p>
+      </div>
+      <div class="result-card">
+        <h3>Erkebulan</h3>
+        <p class="muted">Backend</p>
+        <p class="muted small">Express API, MongoDB queries, validation</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Stack</h2>
+    <p class="muted">Node.js, Express, MongoDB Native Driver (MongoClient), Vanilla JS, HTML, CSS</p>
+  </section>
+  <footer class="footer">
+  <div class="footer-left">© HabitTracker</div>
+  <div class="footer-right">
+    <a href="/api/habits" target="_blank">API</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?sort=desc" target="_blank">sort</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?category=Health" target="_blank">category</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?fields=title,category,createdAt" target="_blank">fields</a>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>

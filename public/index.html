@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HabitTracker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="dot"></span><span>HabitTracker</span></div>
+  <nav class="nav">
+    <a class="nav-link active" href="/">Home</a>
+    <a class="nav-link" href="/dashboard.html">Dashboard</a>
+    <a class="nav-link" href="/search.html">Search</a>
+    <a class="nav-link" href="/about.html">About</a>
+    <a class="nav-link" href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Build habits. Stay consistent.</h1>
+    <p class="muted">
+      Track your month in one grid. See progress instantly. Improve streaks.
+    </p>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+      <a class="btn" href="/dashboard.html">Start Tracking</a>
+      <a class="btn btn-ghost" href="/search.html">Explore Habits</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <div class="cards" id="homeStats"></div>
+  </section>
+
+  <div class="footer">
+    <div>HabitTracker</div>
+    <div>
+      <span class="muted">API test:</span>
+      <a href="/api/habits" target="_blank">/api/habits</a> ·
+      <a href="/api/habits?sort=asc" target="_blank">sort</a> ·
+      <a href="/api/habits?category=Health" target="_blank">category</a> ·
+      <a href="/api/habits?fields=title,category,createdAt" target="_blank">fields</a>
+    </div>
+  </div>
+  <section class="card api-card" id="api-links">
+  <div class="card-head">
+    <h2>Direct API Test Links</h2>
+    <p class="muted">Open these links during defense to demonstrate API behavior.</p>
+  </div>
+
+  <div class="api-links">
+    <a class="pill" href="/api/habits" target="_blank">GET /api/habits</a>
+    <a class="pill" href="/api/habits?sort=asc" target="_blank">GET /api/habits?sort=asc</a>
+    <a class="pill" href="/api/habits?sort=desc" target="_blank">GET /api/habits?sort=desc</a>
+    <a class="pill" href="/api/habits?category=Health" target="_blank">GET /api/habits?category=Health</a>
+    <a class="pill" href="/api/habits?fields=title,category,createdAt" target="_blank">
+      GET /api/habits?fields=title,category,createdAt
+    </a>
+  </div>
+
+  <div class="api-tip">
+    <span class="muted">
+      Tip: to test <b>GET /api/habits/:id</b> create a habit, copy its <code>_id</code>, then open:
+      <code>/api/habits/&lt;your_id&gt;</code>
+    </span>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-left">© HabitTracker</div>
+  <div class="footer-right">
+    <a href="/api/habits" target="_blank">API</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?sort=desc" target="_blank">sort</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?category=Health" target="_blank">category</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?fields=title,category,createdAt" target="_blank">fields</a>
+  </div>
+</footer>
+
+</main>
+
+<script src="/js/common.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

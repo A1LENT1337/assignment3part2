@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — HabitTracker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="dot"></span><span>HabitTracker</span></div>
+  <nav class="nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/dashboard.html">Dashboard</a>
+    <a class="nav-link active" href="/search.html">Search</a>
+    <a class="nav-link" href="/about.html">About</a>
+    <a class="nav-link" href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Search Habits</h1>
+    <p class="muted">Empty input shows Recent Habits.</p>
+
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <input id="searchInput" type="text" placeholder="Type a habit title..." style="flex:1;" />
+      <button class="btn btn-ghost" id="clearBtn">Clear</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row-between">
+      <h2 id="sectionTitle">Recent Habits</h2>
+      <span class="pill" id="countPill">0</span>
+    </div>
+    <div id="results" class="cards"></div>
+  </section>
+  <footer class="footer">
+  <div class="footer-left">© HabitTracker</div>
+  <div class="footer-right">
+    <a href="/api/habits" target="_blank">API</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?sort=desc" target="_blank">sort</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?category=Health" target="_blank">category</a>
+    <span class="muted">·</span>
+    <a href="/api/habits?fields=title,category,createdAt" target="_blank">fields</a>
+  </div>
+</footer>
+
+</main>
+
+<script src="/js/common.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>
